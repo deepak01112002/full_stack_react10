@@ -1,11 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import './style.css'
-import Deepak from "./Deepak"
+import Todo from "./Components/Todo"
 function App() {
   return (
-    <div >
-       <Deepak />
+    <div className="App">
+      <Todo/>
     </div>
   );
 }
