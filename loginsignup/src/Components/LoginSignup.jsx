@@ -20,6 +20,8 @@ function LoginSignup(){
         setArr([...arr,obj])
 
     }
+    
+
     const handleLoginClick =()=>{
         let data = arr.filter((el)=>{
             return el.email == loginEmail && el.pass == loginpass
