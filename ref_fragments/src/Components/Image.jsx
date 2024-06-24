@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRef } from 'react';
 function Image() {
-    let a = useRef('');
-    let b = useRef('')
+   const [arr,setArr] = useState([])
+   const [task,setTask] = useState("")
+   const inputref = useRef("")
     const handleClick = ()=>{
-        a.current.focus()
+      inputref.current.style.backgroundColor = "red"
+      //  let obj = {
+      //   task : task,
+      //   isCompleted : false
+      //  }
+      //  setArr([...arr,obj])
     }
+    console.log(arr)
   return (
     <>
-        <input type="text" id='input' ref={a} />
-        <input type="text" ref={b} />
+        <input type="text"  ref={inputref} />
         <h1 onClick={handleClick}>dasgas</h1>
     </>
   )
