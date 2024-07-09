@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function TodoList() {
-    const [arr,setARR] = useState(JSON.parse(sessionStorage.getItem("data")) || [])
+function TodoList({arr}) {
+
   return (
     <div>
         {

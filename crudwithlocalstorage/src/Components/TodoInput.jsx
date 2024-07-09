@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import TodoList from './TodoList'
 
 function TodoInput() {
     const [task,setTask] = useState("")
@@ -16,12 +17,25 @@ function TodoInput() {
      useEffect(()=>{
         sessionStorage.setItem("data",JSON.stringify(arr))
      },[arr])
+
+
+
+            
+
+     const [count,setCount] = useState(0)
+     useEffect(()=>{
+         setCount(count + 1)
+     },[count])
+
+
+
   return (
     <div>
         <form onSubmit={handleSubmit} >
              <input type="text" placeholder='Task' onChange={(e)=>setTask(e.target.value)} />
              <input type="submit" />
         </form>
+        <TodoList arr={arr}/>
     </div>
   )
 }

@@ -11,6 +11,7 @@ function ProductInput() {
         des : "",
         img : ""
     })
+    const [editId, setEdit] = useState(null)
     const [arr,setarr] = useState(JSON.parse(localStorage.getItem("data"))||[])
     const handleChange = (e)=>{
         let {name,value} = e.target
@@ -18,7 +19,29 @@ function ProductInput() {
     }
     const handleSubmit = (e)=>{
        e.preventDefault()
-      setarr([...arr,state])
+       if(editId == null){
+            setarr([...arr,state])
+       }else{
+           let d = arr.map((el)=>{
+              if(el.id == editId){
+                return {...state}
+              }else{
+                return el;
+              }
+           })
+
+          //  let arr1 = []
+          //  for(let x=0; x<arr.length; x++){
+          //     if(arr[x].id == editId){
+          //        arr1.push({...state})
+          //     }else{
+          //       arr1.push(arr[x])
+          //     }
+          //  }
+           console.log(d)
+           setarr(d)
+       }
+       setEdit(null)
       setState({
         id : v4(),
         title : "",
@@ -40,6 +63,15 @@ function ProductInput() {
         //   }
         // })
     }
+    const handleEdit = (id)=>{
+        setEdit(id)
+        arr.forEach((el)=>{
+          if(el.id == id){
+            setState(el)
+          }
+
+        })
+    }
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -47,9 +79,9 @@ function ProductInput() {
              <input type="text" name='des' value={state.des} onChange={handleChange} placeholder='Description'/>
              <input type="text" name='price' value={state.price} onChange={handleChange} placeholder='Price'/>
              <input type="text" name='img' value={state.img} onChange={handleChange} placeholder='Image URL'/>
-             <input type="submit" />
+             <input type="submit" value={editId == null ? "Submit" : "Edit"}/>
         </form>
-        <ProductListing arr={arr} handleDelete={handleDelete}/>
+        <ProductListing arr={arr} handleDelete={handleDelete} handleEdit={handleEdit}/>
     </div>
   )
 }

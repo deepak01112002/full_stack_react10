@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductListing({arr,handleDelete}) {
+function ProductListing({arr,handleDelete,handleEdit}) {
   return (
     <>
       {
@@ -12,7 +12,7 @@ function ProductListing({arr,handleDelete}) {
                    </div>
                    <div>
                       <h1>{el.title} - {el.des}</h1>
-                      <button>EDIT</button>
+                      <button onClick={()=>handleEdit(el.id)}>EDIT</button>
                       <button onClick={()=>handleDelete(el.id)}>DELETE</button>
                    </div>
                    <div>
