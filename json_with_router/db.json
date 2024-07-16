@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "3e1d",
+      "email": "deepak85@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "ce77",
+      "email": "d@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "8950",
+      "email": "#@gmail.com",
+      "password": "dxfbgdf"
+    },
+    {
+      "id": "4ba0",
+      "email": "de@gmail.com",
+      "password": "125"
+    }
+  ],
+  "products" : []
+}
