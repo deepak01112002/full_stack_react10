@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-      <h1>Balance :- {data} </h1>
-      <button onClick={()=>dispatch({type : "Withdraw"})}>Withdraw</button>
+      <h1>Balance :- {data.count} </h1>
+      <button onClick={()=>dispatch({type : "Withdrawa"})}>Withdraw</button>
       <button onClick={()=>dispatch({type : "Deposit"})}>Deposit</button>
     </>
   )
