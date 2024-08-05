@@ -13,7 +13,7 @@ function Singup() {
     }
     const handleSubmit = (e)=>{
           e.preventDefault()
-          fetch(`http://localhost:3001/users`,{
+          fetch(`http://localhost:8989/insert`,{
               method : 'POST',
               headers : {
                  'Content-type' : "application/json"
