@@ -17,10 +17,22 @@ function SingleProduct() {
       console.log(er)
     })
   },[])
+
+  const handleaddToCart =()=>{
+    
+    fetch(`https://fakestoreapi.com/cart`,{
+      method : "POST",
+      headers : {
+         'Content-Type' : "application/json"
+      },
+      body : JSON.stringify(state)
+    })
+  }
   return (
     <div>
         <img src={state.image} alt={state.title}  width="150px" height="150px" />
         <h2>{state.title} - ₹{state.price}</h2>
+        <button onClick={handleaddToCart}>Add to cart</button>
     </div>
   )
 }

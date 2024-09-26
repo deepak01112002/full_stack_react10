@@ -100,7 +100,7 @@ function Home() {
       <div>
         {filteredData.map((product) => (
           <div key={product.id}>
-            <Link to={`/${product.id}`}>
+            <Link to={`/product/${product.id}`}>
               <h1>{product.title}</h1>
             </Link>
             <img src={product.image} alt="" width="150px" height="150px" />

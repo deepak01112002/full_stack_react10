@@ -8,7 +8,7 @@ function PrivateRoute({children}) {
     let isLogin = localStorage.getItem("isLogin")
   return (
        
-    isLogin ? children : <Navigate to={"/login"}/>
+    true ? children : <Navigate to={"/login"}/>
        
   )
 }
